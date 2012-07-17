@@ -4,3 +4,12 @@ This is a simple doctest that checks some of Python's arithmetic operations
 
 >>> 3 * 3
 10
+
+Now we're going to take some more of doctest's syntax for a spin.
+>>> import sys
+>>> def test_write():
+...	sys.stdout.write("Hello\n")
+...	return True
+>>> test_write()
+Hello
+True
