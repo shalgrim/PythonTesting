@@ -1,0 +1,100 @@
+This is what I did for the Have a go hereo on page 23
+The fib(N) function takes a single integer as its only parameter N. If N is 0 or 1, the function returns 1.
+If N is less than 0, the function raises a ValueError. Otherwise, the function returns the sum of fib(N - 1)
+and fib(N - 2). The returned value will never be less than 1. On versions of Python older than 2.2, and if N
+is at least 52, the function will raise an OverflowError. A naive implementation of this function would get
+very slow as N increased.
+
+>>> def fib(n):
+...	if n < 0:
+...		raise ValueError
+...	elif n == 0 or n == 1:
+...		return 1
+...	else:
+...		min2 = 1
+...		min1 = 1
+...		answer = 2
+...		for i in range(2, n+1):
+...			answer  = min1 + min2
+...			min2 = min1
+...			min1 = answer
+...		return answer
+>>> def naivefib(n):
+...	return fib(n-1) + fib(n-2)
+
+>>> fib(-1) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+ValueError...
+
+>>> fib(0)
+1
+
+>>> fib(1)
+1
+
+>>> fib(2)
+2
+
+>>> fib(3)
+3
+
+>>> fib(4)
+5
+
+>>> for i in range(5, 60):
+...	print fib(i) == naivefib(i)
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
