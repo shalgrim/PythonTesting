@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7b2c75f8-6ad9-49b9-aa6f-64cabe73da28}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PythonTesting.py</StartupFile>
+    <StartupFile>ch02_test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,8 +21,11 @@
     <DebugSymbols>true</DebugSymbols>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Doctest' ">
+    <OutputPath>bin\Doctest\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ch02_01.py" />
+    <Compile Include="ch02_test.py" />
     <Compile Include="PythonTesting.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
