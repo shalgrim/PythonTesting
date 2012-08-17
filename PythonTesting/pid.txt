@@ -44,6 +44,7 @@ when the initial measurement was taken.
 >>> controller.previous_error
 -11.0
 >>> controller.integrated_error
+0.0
 
 Now the tests that describe measurement processing.
 
@@ -51,7 +52,7 @@ Now the tests that describe measurement processing.
 >>> time.time = (float(x) for x in xrange(1, 1000)).next
 >>> pid = reload(pid)
 >>> controller = pid.PID(P=0.5, I=0.5, D=0.5, setpoint=0,
-						initial=12)
+...						initial=12)
 >>> controller.calculate_response(6)
 -3.0
 >>> controller.calculate_response(3)
@@ -75,7 +76,7 @@ parameter specifying at what time the call is happening.
 >>> controller.calculate_response(-1.5, 4)
 -0.75
 >>> controller.calculate_response(-2.25, 5)
--3.0
+-1.125
 
 
 Now the tests that describe setpoint handling
@@ -101,3 +102,25 @@ Now the tests that describe setpoint handling
 >>> controller.pop_setpoint()
 Traceback (most recent call last):
 ValueError: PID controller must have a setpoint
+
+8/17/12
+Page 53
+It's important that the P, I, and D gains not be negative.
+
+>>> pid = reload(pid)
+>>> controller = pid.PID(P=-0.5, I=0.5, D=0.5, setpoint=0,
+...						initial=12)
+Traceback (most recent call last):
+ValueError: PID controller gains must be non-negative
+
+>>> pid = reload(pid)
+>>> controller = pid.PID(P=0.5, I=-0.5, D=0.5, setpoint=0,
+...						initial=12)
+Traceback (most recent call last):
+ValueError: PID controller gains must be non-negative
+
+>>> pid = reload(pid)
+>>> controller = pid.PID(P=0.5, I=0.5, D=-0.5, setpoint=0,
+...						initial=12)
+Traceback (most recent call last):
+ValueError: PID controller gains must be non-negative

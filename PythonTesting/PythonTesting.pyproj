@@ -5,13 +5,18 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7b2c75f8-6ad9-49b9-aa6f-64cabe73da28}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ch02_test.py</StartupFile>
+    <StartupFile>tester.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PythonTesting</Name>
     <RootNamespace>PythonTesting</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>pid.txt</CommandLineArguments>
+    <InterpreterPath />
+    <InterpreterArguments />
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +33,7 @@
     <Compile Include="ch02_test.py" />
     <Compile Include="pid.py" />
     <Compile Include="PythonTesting.py" />
+    <Compile Include="tester.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
