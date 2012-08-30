@@ -1,0 +1,20 @@
+This is the Have a go here on page 73.
+
+Try telling Mocker to expect a function call which returns a string,
+which is then trimmed of whitespace and split on commas, and do it 
+all as a single complex expression.
+
+>>> from mocker import Mocker, ANY
+>>> mocker = Mocker()
+>>> func = mocker.mock()
+>>> func()			# doctest: +ELLIPSIS
+<mocker.Mock object at ...>
+>>> mocker.result(astring).strip().split(',') # i have no idea what I'm doing
+>>> mocker.replay()
+>>> func()
+whatgoeshere
+>>> mocker.restore()
+>>> mocker.verify()
+
+I just realized I think I have not pushed all the stuff I have at work on this.  Where is the rest of the chapter 3 and 4 stuff?
+Oh the chapter 3 stuff is in pid, but not sure about the ch 4 stuff.
