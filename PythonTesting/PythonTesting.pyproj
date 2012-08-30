@@ -35,5 +35,8 @@
     <Compile Include="PythonTesting.py" />
     <Compile Include="tester.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ch04hagh01.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
