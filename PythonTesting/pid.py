@@ -3,6 +3,9 @@
 '''
 from time import time
 
+def mytester():
+    print time()
+
 class PID:
     def __init__(self, P, I, D, setpoint, initial, when=None):
 
@@ -10,14 +13,21 @@ class PID:
             raise ValueError('PID controller gains must be non-negative')
 
         self.gains = (float(P), float(I), float(D))
-        self.setpoint = [float(setpoint)]
+
+        if not isinstance(setpoint, complex):
+            setpoint = float(setpoint)
+
+        if not isinstance(initial, complex):
+            initial = float(initial)
+
+        self.setpoint = [setpoint]
 
         if when is None:
             self.previous_time = time()
         else:
             self.previous_time = float(when)
 
-        self.previous_error = self.setpoint[-1] - float(initial)
+        self.previous_error = self.setpoint[-1] - initial
         self.integrated_error = 0.0
 
     def push_setpoint(self, target):
