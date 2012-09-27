@@ -124,3 +124,24 @@ ValueError: PID controller gains must be non-negative
 ...						initial=12)
 Traceback (most recent call last):
 ValueError: PID controller gains must be non-negative
+
+We want to be able to use complex numbers as the measurement and setpoint
+for the PID controller.
+
+>>> pid = reload(pid)
+>>> controller = pid.PID(P=0.5, I=0.5, D=0.5,
+...						setpoint = 1 + 1j,
+...						initial = 9.4852813742385695+9.4852813742385695j,
+...						when = 1)
+
+>>> controller.calculate_response(5.2426406871192848+5.2426406871192848j, 2)
+(-2.1213203435596424-2.1213203435596424j)
+
+>>> controller.calculate_response(3.1213203435596424+3.1213203435596424j, 3)
+(-3.181980515339464-3.181980515339464j)
+
+>>> controller.calculate_response(-0.060660171779821193-0.060660171779821193j, 4)
+(-0.5303300858899109-0.5303300858899109j)
+
+>>> controller.calculate_response(-0.5909902576697319-0.5909902576697319j, 5)
+(-0.7954951288348661-0.7954951288348661j)
