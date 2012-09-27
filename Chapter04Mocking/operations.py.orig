@@ -15,5 +15,8 @@ class multiply:
             result *= val
 
         return result
+<<<<<<< HEAD
+=======
     # whatever just trying to get this to work.
     # making a change here on my home pc to see if I can get this to push
+>>>>>>> 0379268881601b0db186c75b7980f5857d212b28
