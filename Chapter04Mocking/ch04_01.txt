@@ -11,7 +11,7 @@ record all of the operands, this is straightforward.
 >>> mocker.replay()
 >>> m = operations.multiply(p1, p2)
 >>> m.operands == (p1, p2)
-True
+False
 >>> mocker.restore()
 >>> mocker.verify()
 

@@ -1,8 +1,8 @@
-This is the Have a go hero on page 73.
+This is the Have a go hero on page 79.
 
-Try telling Mocker to expect a function call which returns a string,
-which is then trimmed of whitespace and split on commas, and do it 
-all as a single complex expression.
+Take a look at the following test code, and fill in the missing Mocker demonstrations so that the test passes: 
+
+
 
 >>> from mocker import Mocker, ANY
 >>> mocker = Mocker()

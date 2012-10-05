@@ -13,7 +13,7 @@
     <Name>Chapter04Mocking</Name>
     <RootNamespace>Chapter04Mocking</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>ch04_01.txt</CommandLineArguments>
+    <CommandLineArguments>..\PythonTesting\ch04hagh01.txt</CommandLineArguments>
     <InterpreterPath />
     <InterpreterArguments />
     <IsWindowsApplication>False</IsWindowsApplication>
